@@ -97,7 +97,7 @@ void arcades_delete(LinkedList* listArcades, int id)
 	}
 }
 
-void arcades_modify(LinkedList* listArcades, int id)
+void arcades_modify(LinkedList* listArcades, int id,LinkedList* pArrayListJuegos)
 {
 	int modificarID;
 	Arcades* auxArcades;
@@ -120,6 +120,18 @@ void arcades_modify(LinkedList* listArcades, int id)
             pedirStringEntero(&auxJuego,"\nDesea modificar el juego del arcade?(1-SI/2-NO)","\nEl valor ingresado no es valido, intente nuevamente: ",1,2,3);
             if (auxJuego==1)
 			{
+				if(pArrayListJuegos!=NULL)
+				{
+					for (int i = 0; i < pArrayListJuegos->size; i++)
+					{
+						printf("\n%s",(char*)ll_get(pArrayListJuegos,i));
+					}
+					
+				}
+				else
+				{
+					puts("Aun no se creo el archivo de juegos, puede hacerlo en la opcion 5 del menu principal");
+				}
             	arcades_getJuego(auxArcades,auxArcades->juego);
 			}
 			

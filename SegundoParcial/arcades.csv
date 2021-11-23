@@ -391,7 +391,7 @@ id,nacionalidad,tipo_sonido,cant_jug,fichas_max,salon,game
 391,China,STEREO,4,423,Salon 4,Arkanoid
 392,Peru,STEREO,5,120,Salon 3,Space Invaders
 393,Philippines,STEREO,3,336,Salon Retro,Arkanoid
-394,Brazil,MONO,5,195,Salon 6,Virtua Cop
+394,Brazil,MONO,5,195,Salon 6,Z123
 395,Indonesia,MONO,3,198,Salon 6,Out Run
 396,China,MONO,4,439,Salon Carreras,Double Dragon
 397,Philippines,MONO,2,144,Salon 4,Double Dragon
@@ -404,7 +404,7 @@ id,nacionalidad,tipo_sonido,cant_jug,fichas_max,salon,game
 404,Indonesia,STEREO,4,351,Salon 3,Double Dragon
 405,Indonesia,MONO,5,394,Salon Retro,Double Dragon
 406,Philippines,MONO,2,406,Salon 3,Mortal Kombat
-407,Poland,MONO,2,215,Salon VR,Virtua Cop
+407,Poland,MONO,2,215,Salon VR,2131
 408,Russia,STEREO,4,201,Salon Retro,Tetris
 409,Peru,STEREO,1,209,Salon VR,Bubble Bobble
 410,Russia,STEREO,5,161,Salon 3,Double Dragon

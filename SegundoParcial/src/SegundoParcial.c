@@ -19,11 +19,15 @@ int main()
 {
 	setbuf(stdout,NULL);
     int option = 0;
+    int flagJuegos=0;
+    int respuesta;
 
     LinkedList* listaArcades = ll_newLinkedList();
+    LinkedList* listaJuegos = ll_newLinkedList();
 
 
     controller_loadFromText("arcades.csv", listaArcades);
+    controller_loadJuegos("juegos.txt", listaJuegos);
     
 
     do{
@@ -33,11 +37,14 @@ int main()
         switch(option)
         {
             case 1:{
-				controller_addArcade(listaArcades);
+                if (controller_addArcade(listaArcades)==-1)
+                {
+                    puts("No se pudo crear el arcade");
+                }
                 break;
             }
             case 2:{
-                controller_editArcade(listaArcades);
+                controller_editArcade(listaArcades,listaJuegos);
                 break;
             }
             case 3:{
@@ -49,7 +56,12 @@ int main()
                 break;
             }
             case 5:{
-                controller_ListJuegos("juegos.txt",listaArcades);
+                if (controller_ListJuegos("juegos.txt",listaArcades)==1)
+                {
+                    flagJuegos=1;
+                }
+                
+                
                 break;
             }
             case 6:{
@@ -63,7 +75,15 @@ int main()
                 break;
             }
             case 8:{
-                
+                if (flagJuegos==0)
+                {
+                 pedirStringEntero(&respuesta,"\nNo listo los Juegos, si a agregado un juego nuevo debe listarlos en la opcion 5 del menu.\n¿Desea continuar?(1-SI/2-NO)","\nValor invalido, ingreselo nuevamente: ",1,2,3);
+                }
+                if (respuesta==2)
+                {
+                    option=0;
+                    respuesta=0;
+                }               
                 break;
             }
            

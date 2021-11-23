@@ -45,12 +45,12 @@ int parser_ArcadesFromText(FILE* pFile , LinkedList* pArrayListArcades)
 
     return retorno;
 }
-/*
-int parser_JuegosFromText(FILE* pFile , LinkedList* pArrayListArcades)
-{
-    int retorno=-1;
 
+int parser_JuegosFromText(FILE* pFile , LinkedList* pArrayListJuegos)
+{
     char* pAux;
+
+    int retorno=-1;
 
     char juego[LEN_CHAR];
 
@@ -59,15 +59,20 @@ int parser_JuegosFromText(FILE* pFile , LinkedList* pArrayListArcades)
         //Llega
         do       
         {
-            if(fscanf(pFile,"%[^\n]\n",juego)==1)
-            {         
-                strncpy(pAux, juego, LEN_CHAR);
-                ll_add(pArrayListArcades,pAux);
+            pAux = malloc(LEN_CHAR);
+            
+            
+            if(fscanf(pFile,"%s\n",juego)==1)
+            {          
+                strncpy(pAux,juego,LEN_CHAR);
+                
+                ll_add(pArrayListJuegos,pAux);
+                
             }
+            
         }while(feof(pFile)==0);  
     }
 
 
     return retorno;
 }
-*/

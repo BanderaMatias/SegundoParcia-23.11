@@ -30,7 +30,7 @@ Arcades* arcades_newParametros(char* idStr,char* nacionalidad,char* tipoSonido,c
 
 int find_ArcadesById(LinkedList* listArcades, int id);
 void arcades_delete(LinkedList* listArcades, int id);
-void arcades_modify(LinkedList* listArcades, int id);
+void arcades_modify(LinkedList* listArcades, int id,LinkedList* pArrayListJuegos);
 
 int arcades_setId(Arcades* this,char* id);
 int arcades_getId(Arcades* this,int* id);

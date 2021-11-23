@@ -19,7 +19,6 @@ int controller_loadFromText(char* path , LinkedList* pArcadeList)
     FILE* f = fopen(path,"r");
     if (f!=NULL)
     {
-    	puts("cargue el archivo");
         parser_ArcadesFromText(f,pArcadeList);
         retorno=1;
     }
@@ -27,6 +26,23 @@ int controller_loadFromText(char* path , LinkedList* pArcadeList)
     {
         f = fopen(path,"w");
         puts("No se encontro el archivo, creamos uno en blanco");
+    }
+
+    fclose(f);
+
+
+    return retorno;
+}
+
+int controller_loadJuegos(char* path , LinkedList* pJuegosList)
+{
+    int retorno =-1;
+    FILE* f = fopen(path,"r");
+    if (f!=NULL)
+    {
+    	
+        parser_JuegosFromText(f,pJuegosList);
+        retorno=1;
     }
 
     fclose(f);
@@ -91,6 +107,7 @@ int controller_addArcade(LinkedList* pArcadeList)
             if(ll_add(pArcadeList,pArcade)!=-1)
             {
                 retorno=0;
+                controller_saveAsText("arcades.csv",pArcadeList);
             }
         }
     }
@@ -130,7 +147,7 @@ int controller_ListArcade(LinkedList* pArcadeList)
  * @param pArcadeList Lista de arcades 
  * @return int 
  */
-int controller_editArcade(LinkedList* pArcadeList)
+int controller_editArcade(LinkedList* pArcadeList,LinkedList* pArrayListJuegos)
 {
     int retorno = -1;
     if(controller_ListArcade(pArcadeList)==-1)
@@ -141,8 +158,9 @@ int controller_editArcade(LinkedList* pArcadeList)
 
     if(pedirStringEntero(&modificarID,"Ingrese el ID del arcade que dese modificar","El ID ingresado es invalido, ingreselo nuevamente: ",0,INT_MAX,3)==1)
     {
-        arcades_modify(pArcadeList,modificarID);
+        arcades_modify(pArcadeList,modificarID,pArrayListJuegos);
         retorno=1;
+        controller_saveAsText("arcades.csv",pArcadeList);
     }
     else
     {
@@ -200,7 +218,6 @@ int controller_ListJuegos(char* path,LinkedList* pArcadeList)
         for(int i=0; i<pArcadeList->size; i++)
         {
             pAux = ll_get(pArcadeList,i);
-           /*
             for (int j = 0; j < listaJuegos->size; j++)
             {
                 juego= (char*)ll_get(listaJuegos,j);
@@ -210,7 +227,6 @@ int controller_ListJuegos(char* path,LinkedList* pArcadeList)
                     flagEnLista=1;
                 }
             }
-            */
             if (flagEnLista==0)
             {
                 ll_add(listaJuegos,pAux->juego);

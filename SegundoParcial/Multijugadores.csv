@@ -277,7 +277,6 @@ id,nacionalidad,tipo_sonido,cant_jug,fichas_max,salon,game
 354,China,STEREO,3,362,Salon 2,Metal Slug
 355,Portugal,MONO,4,174,Salon 2,Frogger
 356,Germany,MONO,5,499,Salon VR,Pong
-357,Comoros,MONO,2,348,Salon Carreras,Virtua Cop
 358,Costa Rica,STEREO,4,483,Salon Carreras,Virtua Cop
 359,Ireland,MONO,4,334,Salon VR,Tron
 360,China,STEREO,4,238,Salon VR,Pong
@@ -386,7 +385,6 @@ id,nacionalidad,tipo_sonido,cant_jug,fichas_max,salon,game
 482,Russia,STEREO,5,354,Salon 4,Asteroids
 483,Afghanistan,MONO,4,331,Salon 6,Tetris
 485,France,MONO,4,142,Salon Carreras,Castelvania
-486,Netherlands,STEREO,2,163,Salon 2021,Virtua Cop
 487,China,MONO,4,236,Salon 2021,Double Dragon
 488,Argentina,MONO,4,396,Salon VR,Arkanoid
 489,Azerbaijan,STEREO,2,473,Salon 2021,Star Wars

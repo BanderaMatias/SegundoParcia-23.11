@@ -15,5 +15,5 @@
 
 
 int parser_ArcadesFromText(FILE* pFile , LinkedList* pArrayListEmployee);
-int parser_JuegosFromText(FILE* pFile , LinkedList* pArrayListArcades);
+int parser_JuegosFromText(FILE* pFile , LinkedList* pArrayListJuegos);
 #endif /* PARSER_H_ */
